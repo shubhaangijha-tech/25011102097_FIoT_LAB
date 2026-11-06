@@ -4,11 +4,10 @@
 - **Date:** 20/07/2026
 - **Name of Experiment:** Human-Machine Interface using Matrix Keypad, LEDs, and Seven-Segment Display
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
-- **Constraints:** Strictly NO Arduino APIs, HAL libraries, or RTOS services.
 
 ---
 
-## TASK: Human-Machine Interface (HMI) Controller
+## TASK 4A: Human-Machine Interface (HMI) Controller
 
 ### 1. Circuit Diagram & Hardware Description
 
