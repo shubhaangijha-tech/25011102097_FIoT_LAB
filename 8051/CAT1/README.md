@@ -48,7 +48,6 @@ The program is written in Embedded C using Keil C51.
 - `led1 = 0` sets the pin LOW and turns the LED OFF.
 - `delay()` uses nested loops to generate a software delay.
 - `while(1)` ensures that the LED blinking operation continues indefinitely.
-```
 
 ---
 ### 3. Inference 
