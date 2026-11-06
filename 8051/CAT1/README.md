@@ -21,42 +21,33 @@ The experiment demonstrates LED blinking using an 8051 microcontroller.
 
 ### 2. Core Logic / Pseudocode / Code Base
 
-#### Working Principle
-The LED is connected to pin P1.1 of the 8051 microcontroller. The microcontroller continuously switches the pin between HIGH and LOW states, creating a blinking effect. A software delay function introduces time intervals between the LED transitions.
+**Working Principle:**
 
-#### Pseudocode
+The LED is connected to pin P1.1 of the 8051 microcontroller. The microcontroller continuously switches the pin between HIGH and LOW states, creating a blinking effect.
+
+A software delay function is used to introduce time intervals between the LED transitions.
+
+**Pseudocode:**
+
 1. Include the 8051 register definition header file (`reg51.h`).
 2. Define P1.1 as the LED control pin (`led1`).
-3. Create a delay function using nested loops for timing intervals.
-4. Turn the LED ON by setting `led1` HIGH (`1`).
-5. Call the `delay()` function.
-6. Turn the LED OFF by setting `led1` LOW (`0`).
-7. Call the `delay()` function again.
-8. Loop infinitely using `while(1)`.
+3. Create a delay function using nested loops.
+4. Turn the LED ON by setting P1.1 HIGH (`1`).
+5. Call the delay function.
+6. Turn the LED OFF by setting P1.1 LOW (`0`).
+7. Call the delay function again.
+8. Repeat continuously.
 
-#### Code Base (Embedded C - Keil C51)
-```c
-#include <reg51.h>
+**Code Base:**
 
-sbit led1 = P1^1;
+The program is written in Embedded C using Keil C51.
 
-void delay() {
-    int i, j;
-    for(i = 0; i < 350; i++) {
-        for(j = 0; j < 500; j++) {
-            // Software delay loops
-        }
-    }
-}
-
-void main(void) {
-    while(1) {
-        led1 = 1;   // Turn LED ON
-        delay();
-        led1 = 0;   // Turn LED OFF
-        delay();
-    }
-}
+- `reg51.h` provides the 8051 register definitions.
+- `sbit led1 = P1^1` assigns the LED to pin P1.1.
+- `led1 = 1` sets the pin HIGH and turns the LED ON.
+- `led1 = 0` sets the pin LOW and turns the LED OFF.
+- `delay()` uses nested loops to generate a software delay.
+- `while(1)` ensures that the LED blinking operation continues indefinitely.
 ```
 
 ---
