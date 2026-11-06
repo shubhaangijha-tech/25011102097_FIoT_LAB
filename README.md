@@ -7,7 +7,7 @@ This repository contains the source code, circuit diagrams, and documentation fo
 The repository follows the prescribed directory structure containing 6 experiments each for 8051 and STM32:
 
 ```text
-IoT_Lab_Assessment_ShubhaangiJha/
+Foundations_of_IoT/
 │
 ├── README.md
 ├── .gitignore
@@ -16,21 +16,60 @@ IoT_Lab_Assessment_ShubhaangiJha/
 │   ├── CAT1/
 │   │   ├── README.md
 │   │   ├── circuit.png
-│   │   └── project files (.c, .uvproj, STARTUP.A51)
+│   │   └── project files
+│   │
 │   ├── CAT2/
+│   │   ├── README.md
+│   │   ├── circuit.png
+│   │   └── project files
+│   │
 │   ├── CAT3/
+│   │   ├── README.md
+│   │   ├── circuit.png
+│   │   └── project files
+│   │
 │   ├── CAT4/
+│   │   ├── README.md
+│   │   ├── circuit.png
+│   │   └── project files
+│   │
 │   ├── CAT5/
+│   │   ├── README.md
+│   │   ├── circuit.png
+│   │   └── project files
+│   │
 │   └── CAT6/
+│       ├── README.md
+│       ├── circuit.png
+│       └── project files
 │
 └── STM32/
     ├── CAT1/
     │   ├── README.md
     │   ├── circuit.png
-    │   └── project files (.ioc, Core/, etc.)
+    │   └── project files
+    │
     ├── CAT2/
+    │   ├── README.md
+    │   ├── circuit.png
+    │   └── project files
+    │
     ├── CAT3/
+    │   ├── README.md
+    │   ├── circuit.png
+    │   └── project files
+    │
     ├── CAT4/
+    │   ├── README.md
+    │   ├── circuit.png
+    │   └── project files
+    │
     ├── CAT5/
+    │   ├── README.md
+    │   ├── circuit.png
+    │   └── project files
+    │
     └── CAT6/
-
+        ├── README.md
+        ├── circuit.png
+        └── project files
