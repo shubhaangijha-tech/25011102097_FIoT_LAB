@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 4 (CAT 4)
+- **Experiment:** Continuous Assessment 5 (CAT 5)
 - **Date:**
 - **Name of Experiment:** Software PWM Generation Using Timer 0 for LED Fading
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)

@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 2 (CAT 2)
+- **Experiment:** Continuous Assessment 3 (CAT 3)
 - **Date:**
 - **Name of Experiment:** Four-State LED Pattern Generator with Push-Button Debouncing
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)

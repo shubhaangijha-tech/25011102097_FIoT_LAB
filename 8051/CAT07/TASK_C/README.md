@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 6 (CAT 6)
+- **Experiment:** Continuous Assessment 7 (CAT 7)
 - **Date:**
 - **Name of Experiment:** 4×4 Keypad-Based Character Movement on 16×2 LCD Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + 16×2 LCD + 4×4 Matrix Keypad + Keil µVision (Bare-Metal Embedded C)

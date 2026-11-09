@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 6 (CAT 6)
+- **Experiment:** Continuous Assessment 7 (CAT 7)
 - **Date:**
 - **Name of Experiment:** LCD Cursor Positioning and Dynamic Value Update Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + 16×2 LCD + Keil µVision (Bare-Metal Embedded C)

@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 3 (CAT 3)
+- **Experiment:** Continuous Assessment 4 (CAT 4)
 - **Date:** 
 - **Name of Experiment:** Human-Machine Interface using Matrix Keypad, LEDs, and Seven-Segment Display
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)

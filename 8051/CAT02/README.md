@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-* **Experiment:** Continuous Assessment 1 (CAT 1)
+* **Experiment:** Continuous Assessment 2 (CAT 2)
 * **Date:** 
 * **Name of Experiment:** 8051 Development Board Tool Chain Setup
 * **Hardware Setup / Platform:** 8051 Microcontroller + Keil µVision

@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-- **Experiment:** Continuous Assessment 5 (CAT 5)
+- **Experiment:** Continuous Assessment 6 (CAT 6)
 - **Date:**
 - **Name of Experiment:** UART Initialization and Character Transmission Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
