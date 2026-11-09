@@ -16,7 +16,8 @@ The experiment demonstrates LED blinking using an 8051 microcontroller.
 * **GPIO Pin:** P1.1 (Configured via code base)
 * **Peripheral:** LED with current-limiting resistor
 * **Power Supply:** 5V DC
-
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
