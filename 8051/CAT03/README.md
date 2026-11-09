@@ -19,6 +19,8 @@ The experiment implements a GPIO-based LED controller that manages four LEDs and
 - **Hardware Debug Tools:** Multimeter for pin and voltage verification.
 - **Power Supply:** 5V DC regulated.
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
