@@ -1,7 +1,6 @@
 # EXPERIMENT DETAILS
 
 **EXP:** CONTINUOUS ASSESSMENT 10  (CAT 10) 
-
 **DATE:**  
 **NAME OF EXP:** STM32-Based HTTP Server Using ESP8266 and Node-RED  
 **HARDWARE SETUP / PLATFORM:** STM32 Blue Pill (STM32F103C8T6) + ESP8266/Wemos Wi-Fi Module + UART Communication + Node-RED + STM32CubeIDE / Keil MDK
