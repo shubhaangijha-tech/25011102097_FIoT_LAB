@@ -26,6 +26,8 @@ The experiment implements a stepper motor control system using Timer 0 interrupt
 - **Power Supply:** 5V DC regulated for the microcontroller, with an appropriate motor supply.
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
