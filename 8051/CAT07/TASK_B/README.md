@@ -32,6 +32,9 @@ The experiment focuses on developing functions to position the LCD cursor at a s
 - **LCD Power Supply:** 5V
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 #### Working Principle
