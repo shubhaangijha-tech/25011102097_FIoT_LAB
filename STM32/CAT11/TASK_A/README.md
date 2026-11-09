@@ -27,6 +27,9 @@ The experiment uses the onboard LED of the STM32 NUCLEO-F401RB development board
 - **Programming Language:** Embedded C
 - **Libraries:** STM32 HAL
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**
