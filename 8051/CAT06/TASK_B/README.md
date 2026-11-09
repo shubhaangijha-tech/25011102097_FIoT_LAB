@@ -36,6 +36,8 @@ The microcontroller receives characters typed by the user in PuTTY through the R
 - **PC Terminal:** PuTTY
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base

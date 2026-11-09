@@ -8,6 +8,8 @@
 - **Communication Interface:** USB-to-TTL Serial Converter
 - **Terminal Software:** PuTTY
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ## TASK 6A: UART Initialization and Character Transmission
