@@ -25,6 +25,8 @@ The experiment implements a timer-based LED control system using Timer 0 of the 
 - **Power Supply:** 5V DC regulated.
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
