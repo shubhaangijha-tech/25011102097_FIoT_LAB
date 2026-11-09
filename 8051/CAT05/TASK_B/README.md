@@ -25,6 +25,8 @@ The experiment implements a software-based Pulse Width Modulation (PWM) system u
 - **Power Supply:** 5V DC regulated.
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
