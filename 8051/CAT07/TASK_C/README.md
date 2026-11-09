@@ -48,6 +48,9 @@ Horizontal movement supports wrap-around navigation between column 0 and column 
 - **LCD Power Supply:** 5V
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 #### Working Principle
