@@ -23,6 +23,8 @@ The experiment implements a Human-Machine Interface (HMI) using a 4×3 matrix ke
 - **Power Supply:** 5V DC regulated.
 - **Development Environment:** Keil µVision with Embedded C (Keil C51).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base
