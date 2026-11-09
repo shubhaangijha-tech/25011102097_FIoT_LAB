@@ -23,6 +23,9 @@ The STM32 Blue Pill communicates with the ESP8266 Wi-Fi module using USART2. USA
 
 For serial monitoring, USART1 is configured using PA9 (TX) and PA10 (RX).
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**
