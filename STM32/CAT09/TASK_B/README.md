@@ -29,6 +29,9 @@ The experiment uses UART communication to receive commands from a PC terminal an
 - **Stop Bits:** 1
 - **Parity:** None
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**

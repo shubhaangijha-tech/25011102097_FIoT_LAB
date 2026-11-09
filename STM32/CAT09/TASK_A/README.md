@@ -28,6 +28,9 @@ The experiment establishes serial communication between the STM32 Blue Pill deve
 - **Stop Bits:** 1
 - **Parity:** None
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**
