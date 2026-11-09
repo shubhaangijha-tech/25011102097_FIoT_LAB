@@ -13,63 +13,63 @@ Foundations_of_IoT/
 ├── .gitignore
 │
 ├── 8051/
-│   ├── CAT1/
+│   ├── CAT02/
 │   │   ├── README.md
 │   │   ├── circuit.png
 │   │   └── project files
 │   │
-│   ├── CAT2/
+│   ├── CAT03/
 │   │   ├── README.md
 │   │   ├── circuit.png
 │   │   └── project files
 │   │
-│   ├── CAT3/
+│   ├── CAT04/
 │   │   ├── README.md
 │   │   ├── circuit.png
 │   │   └── project files
 │   │
-│   ├── CAT4/
+│   ├── CAT05/
 │   │   ├── README.md
 │   │   ├── circuit.png
 │   │   └── project files
 │   │
-│   ├── CAT5/
+│   ├── CAT06/
 │   │   ├── README.md
 │   │   ├── circuit.png
 │   │   └── project files
 │   │
-│   └── CAT6/
+│   └── CAT07/
 │       ├── README.md
 │       ├── circuit.png
 │       └── project files
 │
 └── STM32/
-    ├── CAT1/
+    ├── CAT08/
     │   ├── README.md
     │   ├── circuit.png
     │   └── project files
     │
-    ├── CAT2/
+    ├── CAT09/
     │   ├── README.md
     │   ├── circuit.png
     │   └── project files
     │
-    ├── CAT3/
+    ├── CAT10/
     │   ├── README.md
     │   ├── circuit.png
     │   └── project files
     │
-    ├── CAT4/
+    ├── CAT11/
     │   ├── README.md
     │   ├── circuit.png
     │   └── project files
     │
-    ├── CAT5/
+    ├── CAT12/
     │   ├── README.md
     │   ├── circuit.png
     │   └── project files
     │
-    └── CAT6/
+    └── CAT13/
         ├── README.md
         ├── circuit.png
         └── project files
