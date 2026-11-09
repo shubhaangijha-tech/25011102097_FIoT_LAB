@@ -23,6 +23,9 @@ The experiment uses an external push button connected to GPIO pin PA12 to contro
 - **Input Peripheral:** Push Button / Switch
 - **Output Peripheral:** Onboard LED
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**
