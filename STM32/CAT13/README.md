@@ -31,9 +31,9 @@ The STM32 Blue Pill communicates with the BME280 sensor through the I2C1 interfa
 | TX | PA3 (USART2 RX) |
 | RX | PA2 (USART2 TX) |
 | GND | GND |
-| VCC | 3.3V supply (suitable for the ESP8266 current requirement) |
 
-**Note:** The ESP8266 requires a stable 3.3V supply capable of handling its peak current requirements. Ensure that all components share a common ground.
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 
 ### 2. Core Logic / Pseudocode / Code Base
 
