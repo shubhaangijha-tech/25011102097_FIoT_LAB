@@ -29,6 +29,9 @@ The experiment uses the onboard push button and onboard LED of the STM32 NUCLEO-
 - **Programming Language:** Embedded C
 - **Libraries:** STM32 HAL
 
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
+
 ### 2. Core Logic / Pseudocode / Code Base
 
 **Working Principle:**
