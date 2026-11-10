@@ -57,9 +57,10 @@ The experiment uses the BME280 environmental sensor interfaced with the STM32 Bl
 | GND | GND |
 | TX | PA3 (USART2 RX) |
 | RX | PA2 (USART2 TX) |
-| EN/CH_PD | 3.3V |
 
 The STM32 and ESP8266 share a common ground. The ESP8266 requires a stable 3.3V power supply.
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 
 ### 2. Core Logic / Pseudocode / Code Base
 
