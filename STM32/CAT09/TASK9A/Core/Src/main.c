@@ -18,10 +18,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdio.h>
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_SIZE 64
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -90,47 +90,17 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  char rx_buffer[BUFFER_SIZE];
-  char welcome_msg[] = "STM32 Blue Pill String Echo Ready:\r\n";
-  
-  // Send a boot-up message to the terminal
-  HAL_UART_Transmit(&huart1, (uint8_t*)welcome_msg, strlen(welcome_msg), HAL_MAX_DELAY);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	char ch;
   while (1)
   {
     /* USER CODE END WHILE */
-    
-    memset(rx_buffer, 0, BUFFER_SIZE);
-    uint8_t idx = 0;
-    char temp_char;
-
-    // Read characters until newline/carriage return or buffer fills up
-    while (idx < (BUFFER_SIZE - 1))
-    {
-      if (HAL_UART_Receive(&huart1, (uint8_t*)&temp_char, 1, HAL_MAX_DELAY) == HAL_OK)
-      {
-        // Echo individual typed character back immediately for terminal visibility
-        HAL_UART_Transmit(&huart1, (uint8_t*)&temp_char, 1, 10);
-
-        // Break loop on enter key (Carriage Return or Newline)
-        if (temp_char == '\r' || temp_char == '\n')
-        {
-          rx_buffer[idx] = '\0';
-          break;
-        }
-
-        rx_buffer[idx++] = temp_char;
-      }
-    }
-
-    // Append standard newline formatting and transmit confirmation string back
-    char response_msg[BUFFER_SIZE + 20];
-    int len = snprintf(response_msg, sizeof(response_msg), "\r\nYou sent: %s\r\n", rx_buffer);
-    HAL_UART_Transmit(&huart1, (uint8_t*)response_msg, len, HAL_MAX_DELAY);
-
+		HAL_UART_Receive(&huart1,(uint8_t*)&ch,1,10);
+		HAL_UART_Transmit(&huart1,(uint8_t*)&ch,1,10);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
