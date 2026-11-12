@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-**EXP:** CONTINUOUS ASSESSMENT 11
+**EXP:** CONTINUOUS ASSESSMENT 12 (CAT 12)
 
 **DATE:**
 
@@ -10,7 +10,7 @@
 
 ---
 
-## TASK 11B – On-board Switch Control with State Remembrance
+## TASK 12B – On-board Switch Control with State Remembrance
 
 ### 1. Circuit Diagram
 

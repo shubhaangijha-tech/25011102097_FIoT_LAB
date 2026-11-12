@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-**EXP:** CONTINUOUS ASSESSMENT 11 (CAT 11)
+**EXP:** CONTINUOUS ASSESSMENT 12 (CAT 12)
 
 **DATE:**
 
@@ -10,7 +10,7 @@
 
 ---
 
-## TASK 11A – On-board LED Bring-Up
+## TASK 12A – On-board LED Bring-Up
 
 ### 1. Circuit Diagram
 

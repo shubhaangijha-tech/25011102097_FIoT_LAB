@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-**EXP:** CONTINUOUS ASSESSMENT 11 (CAT 11)
+**EXP:** CONTINUOUS ASSESSMENT 12 (CAT 12)
 
 **DATE:**
 
@@ -10,7 +10,7 @@
 
 ---
 
-## TASK 11C – Short-Press and Long-Press Detection
+## TASK 12C – Short-Press and Long-Press Detection
 
 ### 1. Circuit Diagram
 

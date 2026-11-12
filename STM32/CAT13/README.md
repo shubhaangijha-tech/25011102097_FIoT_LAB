@@ -1,6 +1,6 @@
 # EXPERIMENT DETAILS
 
-**EXP:** CONTINUOUS ASSESSMENT 12 (CAT 12)
+**EXP:** CONTINUOUS ASSESSMENT 13 (CAT 13)
 
 **DATE:**
 
@@ -10,7 +10,7 @@
 
 ---
 
-## TASK 12 – BME280 Sensor Monitoring Using HTTP and Node-RED
+## TASK 13 – BME280 Sensor Monitoring Using HTTP and Node-RED
 
 ### 1. Circuit Diagram
 
