@@ -7,7 +7,7 @@
 
 ---
 
-## TASK 2A : Bare-Metal LED Blink
+## TASK 2B : Bare-Metal LED Blink
 
 ### 1. Circuit Diagram & Hardware Description
 The experiment demonstrates LED blinking using an 8051 microcontroller.
@@ -16,6 +16,7 @@ The experiment demonstrates LED blinking using an 8051 microcontroller.
 * **GPIO Pin:** P1.1 (Configured via code base)
 * **Peripheral:** LED with current-limiting resistor
 * **Power Supply:** 5V DC
+
 ## Circuit Diagram
 ![Circuit Diagram](circuit1.png)
 ---
