@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT 13 (CAT 13)
 
-**DATE:**
+**DATE:** 23.10.2026
 
 **NAME OF EXP:** STM32-Based BME280 Environmental Monitoring Using HTTP and Node-RED
 

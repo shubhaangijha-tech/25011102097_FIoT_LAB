@@ -2,7 +2,7 @@
 
 - **Experiment:** Continuous Assessment 11 (CAT 11)
 
-- **Date:** 
+- **Date:** 15.10.2026
 
 - **Name of Experiment:** STM32-Based HTTP Server Using ESP8266 and Node-RED
 

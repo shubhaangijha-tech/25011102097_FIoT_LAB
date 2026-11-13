@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT  14 (CAT 14)
 
-**DATE:**  
+**DATE:** 29.10.2026 
 
 **NAME OF EXP:** BME280-Based Environmental Monitoring Using MQTT and Node-RED  
 

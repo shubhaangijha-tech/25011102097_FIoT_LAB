@@ -35,13 +35,13 @@ Each experiment folder contains:
 | Folder | Date | Experiment Title |
 |--------|-------------|------------------|
 | CAT08 | 24/09/2026 | STM32 GPIO Bring-Up and Switch-Controlled LED |
-| CAT09 | 28/09/2026 | STM32 UART Command Controlled LED |
-| CAT10 | 05/10/2026 | STM32–Wemos Wi-Fi Modem Interface Using AT Commands |
-| CAT11 | 12/10/2026 | HTTP Server – STM32–Wemos Wi-Fi Modem Using AT Commands |
-| CAT12 | 14/10/2026 | STM32F401RE Cortex-M4: GPIO & User Input Programming |
+| CAT09 | 01/10/2026 | STM32 UART Command Controlled LED |
+| CAT10 | 09/10/2026 | STM32–Wemos Wi-Fi Modem Interface Using AT Commands |
+| CAT11 | 15/10/2026 | HTTP Server – STM32–Wemos Wi-Fi Modem Using AT Commands |
+| CAT12 | 16/10/2026 | STM32F401RE Cortex-M4: GPIO & User Input Programming |
 | CAT13 | 23/10/2026 | Sensor Interfacing (BME280) – STM32 – ESP8266 HTTP |
-| CAT14 | 27/10/2026 | Sensor Interfacing (BME280) – MQTT – Node Analytics |
-| CAT15 | TBD | Mini Project |
+| CAT14 | 29/10/2026 | Sensor Interfacing (BME280) – MQTT – Node Analytics |
+| CAT15 | 12/11/2026 | Mini Project |
 
 ## 3. Repository Structure
 ```text

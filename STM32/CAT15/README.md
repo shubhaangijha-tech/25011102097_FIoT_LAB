@@ -5,7 +5,7 @@
 ## EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 15 (CAT 15)
-- **Date:**
+- **Date:** 12.11.2026
 - **Name of Experiment:** BME280-Based Environmental Monitoring Using MQTT and Node-RED
 - **Hardware Setup / Platform:** STM32 Blue Pill (STM32F103C8T6), BME280 Sensor, ESP8266 Wi-Fi Module, Node-RED, EMQX MQTT Broker, OpenWeatherMap API, STM32CubeIDE / Keil MDK
 
@@ -182,7 +182,7 @@ The experiment was extended into a mini-project to determine whether the prevail
 - OpenWeatherMap temperature, pressure, humidity and wind speed.
 - Comparison of local and external weather readings.
 - Final Athletic Meet suitability recommendation.
-
+![Dashboard](Dashboard.png)
 ---
 
 ### 6. Inference

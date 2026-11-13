@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT 12 (CAT 12)
 
-**DATE:**
+**DATE:** 16.10.2026
 
 **NAME OF EXP:** STM32 GPIO-Based On-board Switch Control with State Remembrance
 

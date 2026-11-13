@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT 9 (CAT 9)
 
-**DATE:**
+**DATE:** 01.10.2026
 
 **NAME OF EXP:** STM32 UART-Based Command Interface for LED Control
 

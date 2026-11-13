@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT 9 (CAT 9)
 
-**DATE:**
+**DATE:** 01.10.2026
 
 **NAME OF EXP:** STM32 UART Communication – Character Transmission and String Reception with Echo
 

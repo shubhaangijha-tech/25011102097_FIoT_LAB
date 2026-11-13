@@ -2,7 +2,7 @@
 
 **EXP:** CONTINUOUS ASSESSMENT 10 (CAT 10) 
 
-**DATE:**  
+**DATE:**  09.10.2026
 
 **NAME OF EXP:** UART Communication and Wi-Fi Configuration of ESP8266 Using STM32  
 
