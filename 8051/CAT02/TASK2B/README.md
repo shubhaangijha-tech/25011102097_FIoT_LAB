@@ -18,7 +18,7 @@ The experiment demonstrates LED blinking using an 8051 microcontroller.
 * **Power Supply:** 5V DC
 
 ## Circuit Diagram
-![Circuit Diagram](circuit1.png)
+![Circuit Diagram](circuit.png)
 ---
 
 ### 2. Core Logic / Pseudocode / Code Base

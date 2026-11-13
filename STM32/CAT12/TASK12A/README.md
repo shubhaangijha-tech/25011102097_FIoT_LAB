@@ -28,7 +28,7 @@ The experiment uses the onboard LED of the STM32 NUCLEO-F401RB development board
 - **Libraries:** STM32 HAL
 
 ## Circuit Diagram
-![Circuit Diagram](circuit1.png)
+![Circuit Diagram](circuit.png)
 
 ### 2. Core Logic / Pseudocode / Code Base
 
