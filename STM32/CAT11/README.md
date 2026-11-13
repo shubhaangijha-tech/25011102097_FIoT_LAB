@@ -1,8 +1,11 @@
 ## EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 11 (CAT 11)
+
 - **Date:** 
+
 - **Name of Experiment:** STM32-Based HTTP Server Using ESP8266 and Node-RED
+
 - **Hardware Setup / Platform:** STM32 Blue Pill (STM32F103C8T6), ESP8266/Wemos Wi-Fi Module, UART Communication, Node-RED, STM32CubeIDE / Keil MDK
 
 ---

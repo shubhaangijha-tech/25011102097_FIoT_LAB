@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 6 (CAT 6)
-- **Date:**
+- **Date:** 21.08.2026
 - **Name of Experiment:** UART Echo – Character Reception and Transmission Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
 - **Crystal Frequency:** 11.0592 MHz

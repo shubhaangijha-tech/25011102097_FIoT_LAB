@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 4 (CAT 4)
-- **Date:** 
+- **Date:** 07.08.2026
 - **Name of Experiment:** Human-Machine Interface using Matrix Keypad, LEDs, and Seven-Segment Display
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
 

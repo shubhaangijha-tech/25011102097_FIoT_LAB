@@ -1,8 +1,11 @@
 # EXPERIMENT DETAILS
 
 **EXP:** CONTINUOUS ASSESSMENT 10 (CAT 10) 
+
 **DATE:**  
+
 **NAME OF EXP:** UART Communication and Wi-Fi Configuration of ESP8266 Using STM32  
+
 **HARDWARE SETUP / PLATFORM:** STM32 Blue Pill (STM32F103C8T6) + ESP8266/Wemos Wi-Fi Module + UART Communication + STM32CubeIDE / Keil MDK
 
 ---

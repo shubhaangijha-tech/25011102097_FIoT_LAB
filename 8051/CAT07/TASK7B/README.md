@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 7 (CAT 7)
-- **Date:**
+- **Date:** 28.08.2026
 - **Name of Experiment:** LCD Cursor Positioning and Dynamic Value Update Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + 16×2 LCD + Keil µVision (Bare-Metal Embedded C)
 - **Crystal Frequency:** 11.0592 MHz

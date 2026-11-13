@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 7 (CAT 7)
-- **Date:**
+- **Date:** 28.08.2026
 - **Name of Experiment:** 4×4 Keypad-Based Character Movement on 16×2 LCD Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + 16×2 LCD + 4×4 Matrix Keypad + Keil µVision (Bare-Metal Embedded C)
 - **Crystal Frequency:** 11.0592 MHz

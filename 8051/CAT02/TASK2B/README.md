@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 * **Experiment:** Continuous Assessment 2 (CAT 2)
-* **Date:** 
+* **Date:** 24.07.2026
 * **Name of Experiment:** 8051 Development Board Tool Chain Setup
 * **Hardware Setup / Platform:** 8051 Microcontroller + Keil µVision
 

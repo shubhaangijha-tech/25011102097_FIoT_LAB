@@ -1,7 +1,7 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 5 (CAT 5)
-- **Date:**
+- **Date:** 14.08.2026
 - **Name of Experiment:** Software PWM Generation Using Timer 0 for LED Fading
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
 - **Crystal Frequency:** 11.0592 MHz

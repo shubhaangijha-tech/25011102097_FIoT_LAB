@@ -1,15 +1,12 @@
 # EXPERIMENT DETAILS
 
 - **Experiment:** Continuous Assessment 6 (CAT 6)
-- **Date:**
+- **Date:** 21.08.2026
 - **Name of Experiment:** UART Initialization and Character Transmission Using 8051
 - **Hardware Setup / Platform:** AT89S52 Microcontroller + Keil µVision (Bare-Metal Embedded C)
 - **Crystal Frequency:** 11.0592 MHz
 - **Communication Interface:** USB-to-TTL Serial Converter
 - **Terminal Software:** PuTTY
-
-## Circuit Diagram
-![Circuit Diagram](circuit.png)
 ---
 
 ## TASK 6A: UART Initialization and Character Transmission
@@ -34,6 +31,9 @@ The experiment implements serial communication using the built-in UART periphera
 - **Serial Communication Interface:** USB-to-TTL Converter
 - **PC Terminal:** PuTTY
 - **Development Environment:** Keil µVision using Embedded C (Keil C51).
+
+## Circuit Diagram
+![Circuit Diagram](circuit.png)
 
 ### 2. Core Logic / Pseudocode / Code Base
 
