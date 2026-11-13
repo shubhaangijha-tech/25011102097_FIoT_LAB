@@ -71,12 +71,12 @@ Each experiment folder contains:
 ## 4. Hardware & Toolchains
 
 **8051**
-- Microcontroller: Atmel AT89S52 (8 KB Flash, 256 B RAM, 3 timers)
+- Microcontroller: Atmel AT89S52
 - Clock: 11.0592 MHz crystal
 - Toolchain: Keil µVision with C51 compiler
 
 **STM32**
 - Blue Pill (STM32F103C8T6): Cortex-M3, 72 MHz
-- Nucleo-64 (STM32F401RET6): Cortex-M4 with FPU, 84 MHz, on-board ST-LINK
+- Nucleo-64 (STM32F401RBT6): Cortex-M4 with FPU, 84 MHz, on-board ST-LINK
 - Modem & Sensor: ESP8266 / Wemos D1 Mini (AT firmware), Bosch BME280
 - Analytics: Node-RED (HTTP and MQTT), EMQX broker
