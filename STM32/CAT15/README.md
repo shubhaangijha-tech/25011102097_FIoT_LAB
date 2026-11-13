@@ -1,4 +1,4 @@
-# Mini Poject
+# Mini Project
 
 # BME280-Based Environmental Monitoring Using MQTT and Node-RED
 
@@ -119,9 +119,6 @@ The STM32 Blue Pill communicates with the BME280 sensor through I2C1 and with th
     "humidity": 65.21
 }
 ```
-
-*Values are illustrative; actual readings depend on the surrounding environment.*
-
 ---
 
 ### 4. Node-RED Implementation

@@ -1,0 +1,379 @@
+[
+    {
+        "id": "ddb4dedd8ec0da2a",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "99c3d48efb9ab416",
+        "type": "mqtt in",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "",
+        "topic": "stm32/bme280/data",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "8f056c4fdc582ef3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "78b45a291ed7e127"
+            ]
+        ]
+    },
+    {
+        "id": "3c5dc45b76fc396f",
+        "type": "debug",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "bf4cf86a8cc9a5dd",
+        "type": "inject",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "503f3bdb41fca2de"
+            ]
+        ]
+    },
+    {
+        "id": "503f3bdb41fca2de",
+        "type": "http request",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=ce752fb6fd9a3fccbbe5240d228fedc8&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 290,
+        "y": 200,
+        "wires": [
+            [
+                "6be9b81c60ebc313"
+            ]
+        ]
+    },
+    {
+        "id": "6be9b81c60ebc313",
+        "type": "json",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "632c51e41024e002"
+            ]
+        ]
+    },
+    {
+        "id": "632c51e41024e002",
+        "type": "function",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "format data",
+        "func": "\nlet owm = msg.payload;\n\nmsg.payload = {\n    source: \"openweather\",\n    temperature: owm.main.temp,\n    pressure: owm.main.pressure,\n    humidity: owm.main.humidity,\n    city: owm.name,\n    condition: owm.weather[0].main,\n    description: owm.weather[0].description,\n    wind: owm.wind ? owm.wind.speed : 0\n};\n\nflow.set(\"weather\", msg.payload);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "f61216b3156c4447"
+            ]
+        ]
+    },
+    {
+        "id": "78b45a291ed7e127",
+        "type": "function",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "bme_parser",
+        "func": "// Ensure payload exists to prevent crashes\nif (!msg.payload) {\n    msg.payload = { temperature: 25, pressure: 1013, humidity: 50 };\n    return msg;\n}\n\nlet data = msg.payload;\n\n// Handle stringified JSON if necessary\nif (typeof data === 'string') {\n    try {\n        data = JSON.parse(data);\n    } catch (e) {\n        // Fallback if JSON parse fails\n    }\n}\n\n// Safely extract values with default fallbacks\nlet t = (data && data.temperature !== undefined) ? data.temperature : (data && data.temp !== undefined ? data.temp : 25);\nlet p = (data && data.pressure !== undefined) ? data.pressure : 1013;\nlet h = (data && data.humidity !== undefined) ? data.humidity : 50;\n\n// Output standardized clean numbers\nmsg.payload = {\n    temperature: Number(t),\n    pressure: Number(p),\n    humidity: Number(h)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "f61216b3156c4447"
+            ]
+        ]
+    },
+    {
+        "id": "f61216b3156c4447",
+        "type": "function",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "Compare and Recommend",
+        "func": "// Retrieve or initialize cache to store both data sources\nlet cache = flow.get('weather_cache') || {\n    bme280: { temperature: 25, pressure: 1013, humidity: 50 },\n    openweathermap: { temperature: 24, pressure: 1012, humidity: 55, description: \"Clear sky\", wind: 2.1 },\n    city: \"Local Station\"\n};\n\nlet payload = msg.payload || {};\n\n// Identify if incoming message is from BME280 parser or OpenWeatherMap\nif (payload.temperature !== undefined && payload.description === undefined) {\n    cache.bme280 = {\n        temperature: Number(payload.temperature),\n        pressure: Number(payload.pressure || 1013),\n        humidity: Number(payload.humidity || 50)\n    };\n} else if (payload.temperature !== undefined || payload.main || payload.weather) {\n    cache.openweathermap = {\n        temperature: Number(payload.temperature !== undefined ? payload.temperature : (payload.main ? payload.main.temp : 24)),\n        pressure: Number(payload.pressure !== undefined ? payload.pressure : (payload.main ? payload.main.pressure : 1012)),\n        humidity: Number(payload.humidity !== undefined ? payload.humidity : (payload.main ? payload.main.humidity : 55)),\n        description: payload.description || (payload.weather ? payload.weather[0].description : \"Clear sky\"),\n        wind: Number(payload.wind !== undefined ? payload.wind : (payload.wind_speed || 2.1))\n    };\n    if (payload.city) cache.city = payload.city;\n}\n\n// Save back to flow context\nflow.set('weather_cache', cache);\n\nlet bme = cache.bme280;\nlet owm = cache.openweathermap;\n\n// Calculate differences\nlet tempDiff = +(bme.temperature - owm.temperature).toFixed(1);\nlet humDiff = +(bme.humidity - owm.humidity).toFixed(1);\n\n// Primary evaluation: If temperature is between 20°C and 35°C, it's a GO!\nlet recommendation = \"GOOD\";\nlet advice = \"ATHLETIC MEET GO AHEAD\";\n\nif (bme.temperature < 20 || bme.temperature > 26) {\n    // Out of comfortable range -> Postpone\n    recommendation = \"BAD\";\n    advice = \"POSTPONE THE MEET\";\n} else if (Math.abs(tempDiff) > 10 || bme.humidity > 95) {\n    // Extreme variance or extreme moisture warning\n    recommendation = \"NOT SUITABLE\";\n    advice = \"TAKE PRECAUTION AND LIKELY ADVISED NOT TO CONDUCT THE MEET\";\n}\n\n// Construct exact payload for your Vue template\nmsg.payload = {\n    city: cache.city,\n    bme280: bme,\n    openweathermap: owm,\n    comparison: {\n        temperatureDifference: tempDiff,\n        humidityDifference: humDiff\n    },\n    recommendation: recommendation,\n    advice: advice\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 140,
+        "wires": [
+            [
+                "a045a8c12ad26ce1"
+            ]
+        ]
+    },
+    {
+        "id": "e6ef374e721ec251",
+        "type": "inject",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "744ebb360a9e9e9e"
+            ]
+        ]
+    },
+    {
+        "id": "744ebb360a9e9e9e",
+        "type": "function",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "simulated_bme",
+        "func": "\nlet data = {\n    temperature: 50,\n    pressure: 1005,\n    humidity: 40\n};\n\nflow.set(\"bme280\", data);\n\nmsg.payload = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a045a8c12ad26ce1",
+        "type": "ui-template",
+        "z": "ddb4dedd8ec0da2a",
+        "group": "9342d3dcf7425c4d",
+        "page": "",
+        "ui": "",
+        "name": "Outdoor Activity",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div v-if=\"msg && msg.payload\" style=\"padding:15px\">\n\n    <h2>Weather Comparison</h2>\n    <h3>{{msg.payload.city}}</h3>\n\n    <div class=\"weather-grid\">\n\n      <!-- BME280 SENSOR -->\n      <div class=\"weather-box\">\n        <h3>BME280 SENSOR</h3>\n        <h1>{{msg.payload.bme280.temperature}} °C</h1>\n        \n        <!-- Temperature Gauge / Bar -->\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Temp Range</span><span>{{msg.payload.bme280.temperature}}°C</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill temp-fill\" :style=\"{ width: Math.min(Math.max((msg.payload.bme280.temperature / 50) * 100, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n\n        <p>Pressure: {{msg.payload.bme280.pressure}} hPa</p>\n        <!-- Pressure Bar -->\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Pressure</span><span>{{msg.payload.bme280.pressure}} hPa</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill press-fill\" :style=\"{ width: Math.min(Math.max(((msg.payload.bme280.pressure - 900) / 200) * 100, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n\n        <p>Humidity: {{msg.payload.bme280.humidity}}%</p>\n        <!-- Humidity Bar / Gauge -->\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Humidity</span><span>{{msg.payload.bme280.humidity}}%</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill hum-fill\" :style=\"{ width: Math.min(Math.max(msg.payload.bme280.humidity, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n      </div>\n\n      <!-- OPENWEATHERMAP -->\n      <div class=\"weather-box\">\n        <h3>OPENWEATHERMAP</h3>\n        <h1>{{msg.payload.openweathermap.temperature}} °C</h1>\n\n        <!-- Temperature Gauge / Bar -->\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Temp Range</span><span>{{msg.payload.openweathermap.temperature}}°C</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill temp-fill\" :style=\"{ width: Math.min(Math.max((msg.payload.openweathermap.temperature / 50) * 100, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n\n        <p>Pressure: {{msg.payload.openweathermap.pressure}} hPa</p>\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Pressure</span><span>{{msg.payload.openweathermap.pressure}} hPa</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill press-fill\" :style=\"{ width: Math.min(Math.max(((msg.payload.openweathermap.pressure - 900) / 200) * 100, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n\n        <p>Humidity: {{msg.payload.openweathermap.humidity}}%</p>\n        <div class=\"gauge-container\">\n          <div class=\"gauge-label\"><span>Humidity</span><span>{{msg.payload.openweathermap.humidity}}%</span></div>\n          <div class=\"progress-bar\">\n            <div class=\"progress-fill hum-fill\" :style=\"{ width: Math.min(Math.max(msg.payload.openweathermap.humidity, 0), 100) + '%' }\"></div>\n          </div>\n        </div>\n\n        <p>{{msg.payload.openweathermap.description}}</p>\n        <p>Wind: {{msg.payload.openweathermap.wind}} m/s</p>\n      </div>\n\n    </div>\n\n    <h3>READING DIFFERENCES</h3>\n\n    <div class=\"weather-box\">\n      <p>Temperature difference: <strong>{{msg.payload.comparison.temperatureDifference}} °C</strong></p>\n      <p>Humidity difference: <strong>{{msg.payload.comparison.humidityDifference}}%</strong></p>\n    </div>\n\n    <div class=\"recommendation\"\n      :style=\"{backgroundColor:\n        msg.payload.recommendation === 'GOOD' ? '#219653' :\n        msg.payload.recommendation === 'WORSE' ? '#e6a23c' : '#d93025'}\">\n\n      <h2>OUTDOOR ACTIVITY</h2>\n      <h1>{{msg.payload.recommendation}}</h1>\n      <p>{{msg.payload.advice}}</p>\n\n    </div>\n\n  </div>\n</template>\n\n<style>\n.weather-grid {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 12px;\n}\n\n.weather-box {\n  flex: 1;\n  min-width: 260px;\n  padding: 18px;\n  margin-bottom: 12px;\n  border-radius: 10px;\n  background: #e8f1ff;\n  color: #183b65;\n}\n\n/* Gauge / Progress Bar Styles */\n.gauge-container {\n  margin: 10px 0 15px 0;\n}\n\n.gauge-label {\n  display: flex;\n  justify-content: space-between;\n  font-size: 12px;\n  font-weight: bold;\n  margin-bottom: 4px;\n  color: #334e68;\n}\n\n.progress-bar {\n  width: 100%;\n  height: 10px;\n  background-color: #cbd5e1;\n  border-radius: 5px;\n  overflow: hidden;\n}\n\n.progress-fill {\n  height: 100%;\n  transition: width 0.4s ease-in-out;\n  border-radius: 5px;\n}\n\n.temp-fill {\n  background-color: #f59e0b; /* Orange for temperature */\n}\n\n.press-fill {\n  background-color: #3b82f6; /* Blue for pressure */\n}\n\n.hum-fill {\n  background-color: #10b981; /* Green for humidity */\n}\n\n.recommendation {\n  padding: 20px;\n  margin-top: 15px;\n  border-radius: 12px;\n  text-align: center;\n  color: white;\n}\n\n.recommendation h1 {\n  font-size: 36px;\n  margin: 10px 0;\n}\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 880,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f056c4fdc582ef3",
+        "type": "mqtt-broker",
+        "z": "ddb4dedd8ec0da2a",
+        "name": "mqttx",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9342d3dcf7425c4d",
+        "type": "ui-group",
+        "name": "Group 3",
+        "page": "a435d2a47a9a9c90",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "a435d2a47a9a9c90",
+        "type": "ui-page",
+        "name": "Page 2",
+        "ui": "ce2d8419c9fde6f8",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "d985b781ccc03798",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ce2d8419c9fde6f8",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "d985b781ccc03798",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "e68968ebf7857eef",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.33.0"
+        }
+    }
+]
