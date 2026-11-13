@@ -50,18 +50,17 @@ Each experiment folder contains:
 ├── .gitignore
 │
 ├── 8051/
-│   ├── CAT2/          # each CAT folder: README.md, circuit.png,
-│   ├── CAT3/          # project files, and TASKA/, TASKB/, ... subfolders
-│   ├── CAT4/
-│   ├── CAT5/
-│   ├── CAT6/
-│   └── CAT7/
+│   ├── CAT02/          # each CAT folder: README.md, circuit.png,
+│   ├── CAT03/          # project files, and TASKA/, TASKB/, ... subfolders
+│   ├── CAT04/
+│   ├── CAT05/
+│   ├── CAT06/
+│   └── CAT07/
 │
 └── STM32/
-    ├── CAT8/
-    ├── CAT9/
+    ├── CAT08/
+    ├── CAT09/
     ├── CAT10/
-    ├── CAT10c/
     ├── CAT11/
     ├── CAT12/
     ├── CAT13/
